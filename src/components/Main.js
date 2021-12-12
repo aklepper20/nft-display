@@ -20,43 +20,52 @@ function Main({ selectedPunk, punkListData }) {
           </PunkContainer>
         </PunkHighlight>
 
-        <PunkDetails style={{ color: "#fff" }}>
-          <Title>{activePunk.name}</Title>
-          <ItemNumber>#{activePunk.token_id}</ItemNumber>
-        </PunkDetails>
+        <Flex>
+          <PunkDetails style={{ color: "#fff" }}>
+            <Title>
+              {activePunk.name} <ItemNumber>#{activePunk.token_id}</ItemNumber>
+            </Title>
+          </PunkDetails>
 
-        <Owner>
-          <OwnerImageContainer>
-            <img src={me} alt="Image of Aly" />
-          </OwnerImageContainer>
+          <Owner>
+            <OwnerImageContainer>
+              <img src={me} alt="Image of Aly" />
+            </OwnerImageContainer>
 
-          <OwnerDetails>
-            <OwnerNameAndHandle>
-              <div style={{ color: "#a1a5b0" }}>{activePunk.owner.address}</div>
-              <OwnerHandle style={{ color: "#a1a5b0" }}>@Bait</OwnerHandle>
-            </OwnerNameAndHandle>
+            <OwnerDetails>
+              <OwnerNameAndHandle>
+                <div style={{ color: "#a1a5b0" }}>
+                  {activePunk.owner.address}
+                </div>
+                <OwnerHandle style={{ color: "#a1a5b0" }}>@Bait</OwnerHandle>
+              </OwnerNameAndHandle>
 
-            <OwnerLink>
-              <img src={instagramLogo} alt="Instagram Logo" />
-            </OwnerLink>
-            <OwnerLink>
-              <img
-                src={gitHubLogo}
-                alt="Github Logo"
-                style={{
-                  backgroundColor: "white",
-                  padding: "8px",
-                  borderRadius: "5px",
-                }}
-              />
-            </OwnerLink>
-          </OwnerDetails>
-        </Owner>
+              <OwnerLink>
+                <img src={instagramLogo} alt="Instagram Logo" />
+              </OwnerLink>
+              <OwnerLink>
+                <img
+                  src={gitHubLogo}
+                  alt="Github Logo"
+                  style={{
+                    backgroundColor: "white",
+                    padding: "8px",
+                    borderRadius: "5px",
+                  }}
+                />
+              </OwnerLink>
+            </OwnerDetails>
+          </Owner>
+        </Flex>
       </MainContent>
     </Container>
   );
 }
 
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const Container = styled.div`
   max-height: 50vh;
 `;
@@ -95,11 +104,11 @@ const PunkDetails = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 96px;
+  font-size: 56px;
   font-weight: 800;
 `;
 
-const ItemNumber = styled.div`
+const ItemNumber = styled.span`
   color: #a1a5b0;
   font-size: 72px;
   align-self: center;
@@ -122,7 +131,6 @@ const OwnerImageContainer = styled.div`
   border-radius: 50px;
   overflow: hidden;
   object-fit: contain;
-
   img {
     height: 100%;
     width: 100%;
@@ -132,11 +140,12 @@ const OwnerImageContainer = styled.div`
 const OwnerDetails = styled.div`
   display: flex;
   align-items: center;
+
   flex: 1;
 `;
 
 const OwnerNameAndHandle = styled.div`
-  flex: 1;
+  flex: 0;
 `;
 
 const OwnerHandle = styled.div`
