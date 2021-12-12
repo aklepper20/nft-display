@@ -8,6 +8,7 @@ import axios from "axios";
 
 function App() {
   const [punkListData, setPunkListData] = useState([]);
+  const [selectedPunk, setSelectedPunk] = useState(0);
 
   useEffect(() => {
     const getNFTs = async () => {
@@ -23,8 +24,15 @@ function App() {
   return (
     <Container>
       <Header />
-      <Main />
-      <PunkList punkListData={punkListData} />
+      {punkListData.length > 0 && (
+        <>
+          <Main selectedPunk={selectedPunk} punkListData={punkListData} />
+          <PunkList
+            punkListData={punkListData}
+            setSelectedPunk={setSelectedPunk}
+          />
+        </>
+      )}
     </Container>
   );
 }
