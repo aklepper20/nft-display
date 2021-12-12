@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import CollectionCard from "./components/CollectionCard";
 import Header from "./components/Header";
+import PunkList from "./components/PunkList";
+import Main from "./components/Main";
 import axios from "axios";
 
 function App() {
@@ -21,12 +23,8 @@ function App() {
   return (
     <Container>
       <Header />
-      <CollectionCard
-        id={0}
-        name={"Bandana Punk"}
-        traits={[{ value: 7 }]}
-        image="https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE.jpg"
-      />
+      <Main />
+      <PunkList punkListData={punkListData} />
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import weth from "../assets/weth.png";
 
-function CollectionCard({ id, name, traits, image }) {
+function CollectionCard({ key, id, name, traits, image }) {
   return (
     <Container>
       <img src={image} alt="Punk Image" />
