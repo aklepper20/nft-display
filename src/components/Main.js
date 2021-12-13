@@ -41,18 +41,26 @@ function Main({ selectedPunk, punkListData }) {
               </OwnerNameAndHandle>
 
               <OwnerLink>
-                <img src={instagramLogo} alt="Instagram Logo" />
+                <a href="https://www.instagram.com/" target="_blank">
+                  <img
+                    src={instagramLogo}
+                    alt="Instagram Logo"
+                    style={{ width: "55px", height: "55px" }}
+                  />
+                </a>
               </OwnerLink>
               <OwnerLink>
-                <img
-                  src={gitHubLogo}
-                  alt="Github Logo"
-                  style={{
-                    backgroundColor: "white",
-                    padding: "8px",
-                    borderRadius: "5px",
-                  }}
-                />
+                <a href="https://github.com/aklepper20" target="_blank">
+                  <img
+                    src={gitHubLogo}
+                    alt="Github Logo"
+                    style={{
+                      backgroundColor: "white",
+                      padding: "3px",
+                      borderRadius: "5px",
+                    }}
+                  />
+                </a>
               </OwnerLink>
             </OwnerDetails>
           </Owner>
@@ -128,7 +136,6 @@ const OwnerImageContainer = styled.div`
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border-radius: 50px;
   overflow: hidden;
   object-fit: contain;
   img {
@@ -140,12 +147,11 @@ const OwnerImageContainer = styled.div`
 const OwnerDetails = styled.div`
   display: flex;
   align-items: center;
-
-  flex: 1;
+  justify-content: space-between;
 `;
 
 const OwnerNameAndHandle = styled.div`
-  flex: 0;
+  /* flex: 0; */
 `;
 
 const OwnerHandle = styled.div`
@@ -155,18 +161,12 @@ const OwnerHandle = styled.div`
 const OwnerLink = styled.div`
   padding: 12px;
   border-radius: 50px;
-  height: 50px;
-  width: 50px;
-  border: 1px solid #fff;
+  width: 40px;
   margin: 0 0 0 10px;
-
+  text-align: center;
   img {
     height: 100%;
     width: 100%;
-  }
-
-  :last-child {
-    border: none;
   }
 `;
 export default Main;
