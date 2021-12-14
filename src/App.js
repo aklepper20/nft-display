@@ -51,7 +51,7 @@ function App() {
   return (
     <ThemeProvider theme={themes[theme]}>
       <Container>
-        <Header theme={theme} setTheme={setTheme} />
+        <Header setTheme={setTheme} theme={theme} />
         {punkListData.length > 0 && (
           <>
             <Main
@@ -63,8 +63,6 @@ function App() {
             <PunkList
               punkListData={punkListData}
               setSelectedPunk={setSelectedPunk}
-              theme={theme}
-              setTheme={setTheme}
             />
           </>
         )}
