@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import weth from "../assets/weth.png";
 
-function CollectionCard({ key, id, name, traits, image }) {
+function CollectionCard({ id, name, traits, image }) {
   return (
     <Container>
       <img src={image} alt="Punk Image" />
@@ -21,7 +21,7 @@ function CollectionCard({ key, id, name, traits, image }) {
 
 const Container = styled.div`
   color: white;
-  background-color: #1a1c1e;
+  background-color: ${(props) => props.theme.collectionCardBackground};
   border-radius: 20px;
   overflow: hidden;
   width: 300px;
@@ -38,6 +38,7 @@ const Details = styled.div`
 const Name = styled.div`
   font-size: 20px;
   font-weight: 900;
+  color: #a1a5b0;
 `;
 const Id = styled.div`
   color: #a1a5b0;

@@ -60,7 +60,7 @@ const HeaderLogo = styled.div`
   }
 `;
 const SearchBar = styled.div`
-  background-color: #1c1c1e;
+  background-color: ${(props) => props.theme.backgroundColorSearchBar};
   height: 50px;
   flex: 1;
   display: flex;
@@ -101,7 +101,7 @@ const HeaderActions = styled.div`
 
 const ThemeSwitchContainer = styled.div`
   display: flex;
-  background-color: #1c1c1e;
+  background-color: ${(props) => props.theme.backgroundThemeSwitchIcon};
   border-radius: 50px;
   padding: 15px;
   justify-content: center;

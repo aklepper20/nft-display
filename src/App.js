@@ -22,11 +22,23 @@ function App() {
   }, []);
 
   const lightTheme = {
-    backgroundColor: "#fff",
+    pageBackgroundColor: "#fff",
+    backgroundColorSearchBar: "#f3f6f9",
+    backgroundThemeSwitchIcon: "#f3f6f9",
+    punkNameTextColor: "#1c1c1e",
+    instaBackgroundColor: "#1c1c1e",
+    mainBorderBottom: "1px solid #1a1c1e",
+    collectionCardBackground: "#f3f6f9",
   };
 
   const darkTheme = {
-    backgroundColor: "#000",
+    pageBackgroundColor: "#000",
+    backgroundColorSearchBar: "#1c1c1e",
+    backgroundThemeSwitchIcon: "#1c1c1e",
+    punkNameTextColor: "#fff",
+    instaBackgroundColor: "transparent",
+    mainBorderBottom: "1px solid #fff",
+    collectionCardBackground: "#1a1c1e",
   };
 
   const themes = {
@@ -63,7 +75,7 @@ const Container = styled.div`
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #000;
+  background-color: ${(props) => props.theme.pageBackgroundColor};
   min-height: 100vh;
   max-width: 100vw;
 `;
