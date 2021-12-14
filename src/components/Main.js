@@ -5,7 +5,7 @@ import instagramLogo from "../assets/instagram.png";
 import gitHubLogo from "../assets/gitHublogo.png";
 import me from "../assets/me.jpg";
 
-function Main({ selectedPunk, punkListData, theme, setTheme }) {
+function Main({ selectedPunk, punkListData }) {
   const [activePunk, setActivePunk] = useState(punkListData[0]);
 
   useEffect(() => {
@@ -83,6 +83,7 @@ const MainContent = styled.div`
   display: flex;
   padding-bottom: 20px;
   border-bottom: ${(props) => props.theme.mainBorderBottom};
+  transition: all 0.5s ease;
 `;
 
 const PunkHighlight = styled.div`
@@ -111,6 +112,7 @@ const PunkDetails = styled.div`
   justify-content: space-between;
   flex: 0.75;
   color: ${(props) => props.theme.punkNameTextColor};
+  transition: all 0.5s ease;
 `;
 
 const Title = styled.div`
@@ -171,6 +173,7 @@ const OwnerLink = styled.div`
     width: 100%;
     background-color: ${(props) => props.theme.instaBackgroundColor};
     border-radius: 15px;
+    transition: all 0.5s ease;
   }
 `;
 

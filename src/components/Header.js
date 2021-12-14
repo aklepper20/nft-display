@@ -67,6 +67,7 @@ const SearchBar = styled.div`
   border-radius: 50px;
   align-items: center;
   margin: 10px;
+  transition: all 0.5s ease;
 `;
 
 const SearchIcon = styled.div`
@@ -107,6 +108,7 @@ const ThemeSwitchContainer = styled.div`
   justify-content: center;
   align-items: center;
   object-fit: contain;
+  transition: all 0.5s ease;
 
   img {
     height: 25px;

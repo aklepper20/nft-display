@@ -29,6 +29,7 @@ function App() {
     instaBackgroundColor: "#1c1c1e",
     mainBorderBottom: "1px solid #1a1c1e",
     collectionCardBackground: "#f3f6f9",
+    collectionNameColor: "#1c1c1e",
   };
 
   const darkTheme = {
@@ -39,6 +40,7 @@ function App() {
     instaBackgroundColor: "transparent",
     mainBorderBottom: "1px solid #fff",
     collectionCardBackground: "#1a1c1e",
+    collectionNameColor: "#fff",
   };
 
   const themes = {
@@ -78,6 +80,7 @@ const Container = styled.div`
   background-color: ${(props) => props.theme.pageBackgroundColor};
   min-height: 100vh;
   max-width: 100vw;
+  transition: all 0.5s ease;
 `;
 
 export default App;

@@ -27,7 +27,7 @@ const Container = styled.div`
   width: 300px;
   height: 500px;
   margin-right: 30px;
-
+  transition: all 0.5s ease;
   img {
     width: 100%;
   }
@@ -48,8 +48,9 @@ const Id = styled.div`
 const PriceContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 18px;
   object-fit: contain;
+  color: #a1a5b0;
   img {
     height: 23px;
     width: 15px;
