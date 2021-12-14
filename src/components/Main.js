@@ -11,6 +11,7 @@ function Main({ selectedPunk, punkListData }) {
   useEffect(() => {
     setActivePunk(punkListData[selectedPunk]);
   }, [punkListData, selectedPunk]);
+
   return (
     <Container>
       <MainContent>
@@ -169,4 +170,5 @@ const OwnerLink = styled.div`
     width: 100%;
   }
 `;
+
 export default Main;

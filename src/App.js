@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import styled from "styled-components";
-import CollectionCard from "./components/CollectionCard";
+import styled, { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import PunkList from "./components/PunkList";
 import Main from "./components/Main";
@@ -9,6 +8,7 @@ import axios from "axios";
 function App() {
   const [punkListData, setPunkListData] = useState([]);
   const [selectedPunk, setSelectedPunk] = useState(0);
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const getNFTs = async () => {
@@ -21,19 +21,41 @@ function App() {
     return getNFTs();
   }, []);
 
+  const lightTheme = {
+    backgroundColor: "#fff",
+  };
+
+  const darkTheme = {
+    backgroundColor: "#000",
+  };
+
+  const themes = {
+    light: lightTheme,
+    dark: darkTheme,
+  };
+
   return (
-    <Container>
-      <Header />
-      {punkListData.length > 0 && (
-        <>
-          <Main selectedPunk={selectedPunk} punkListData={punkListData} />
-          <PunkList
-            punkListData={punkListData}
-            setSelectedPunk={setSelectedPunk}
-          />
-        </>
-      )}
-    </Container>
+    <ThemeProvider theme={themes[theme]}>
+      <Container>
+        <Header theme={theme} setTheme={setTheme} />
+        {punkListData.length > 0 && (
+          <>
+            <Main
+              selectedPunk={selectedPunk}
+              punkListData={punkListData}
+              theme={theme}
+              setTheme={setTheme}
+            />
+            <PunkList
+              punkListData={punkListData}
+              setSelectedPunk={setSelectedPunk}
+              theme={theme}
+              setTheme={setTheme}
+            />
+          </>
+        )}
+      </Container>
+    </ThemeProvider>
   );
 }
 

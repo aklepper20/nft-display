@@ -2,9 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import punkLogo from "../assets/cryptopunk-logo.png";
 import searchIcon from "../assets/search.png";
-import themeSwitchIcon from "../assets/theme-switch.png";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
 
-function Header() {
+function Header(props) {
+  const changeTheme = () => {
+    if (props.theme === "dark") {
+      console.log("we are changing to light");
+      props.setTheme("light");
+    } else {
+      props.setTheme("dark");
+      console.log("WE ARE DARK");
+    }
+  };
+
+  const themeIcon =
+    props.theme === "dark" ? <LightModeIcon /> : <NightlightRoundIcon />;
+
   return (
     <Container>
       <HeaderLogo>
@@ -22,8 +36,8 @@ function Header() {
         <p>Create</p>
       </HeaderContent>
       <HeaderActions>
-        <ThemeSwitchContainer>
-          <img src={themeSwitchIcon} alt="Theme Switch Icon" />
+        <ThemeSwitchContainer onClick={changeTheme}>
+          {themeIcon}
         </ThemeSwitchContainer>
       </HeaderActions>
       <LoginButton>GET IN</LoginButton>
