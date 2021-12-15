@@ -9,6 +9,7 @@ function App() {
   const [punkListData, setPunkListData] = useState([]);
   const [selectedPunk, setSelectedPunk] = useState(0);
   const [theme, setTheme] = useState("dark");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const getNFTs = async () => {
@@ -51,7 +52,12 @@ function App() {
   return (
     <ThemeProvider theme={themes[theme]}>
       <Container>
-        <Header setTheme={setTheme} theme={theme} />
+        <Header
+          setTheme={setTheme}
+          theme={theme}
+          setSearch={setSearch}
+          search={search}
+        />
         {punkListData.length > 0 && (
           <>
             <Main
@@ -63,6 +69,7 @@ function App() {
             <PunkList
               punkListData={punkListData}
               setSelectedPunk={setSelectedPunk}
+              search={search}
             />
           </>
         )}
@@ -79,6 +86,7 @@ const Container = styled.div`
   min-height: 100vh;
   max-width: 100vw;
   transition: all 0.5s ease;
+  overflow-x: hidden;
 `;
 
 export default App;

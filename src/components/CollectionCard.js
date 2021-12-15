@@ -60,4 +60,6 @@ const Price = styled.div`
   margin-left: 5px;
   font-weight: 600;
 `;
+
+//whenever you want to render to the dom you have to use .map. If you filter and array or anything your have to use .map chained onto it to render any JSX.
 export default CollectionCard;

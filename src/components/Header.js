@@ -8,11 +8,9 @@ import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
 function Header(props) {
   const changeTheme = () => {
     if (props.theme === "dark") {
-      console.log("we are changing to light");
       props.setTheme("light");
     } else {
       props.setTheme("dark");
-      console.log("WE ARE DARK");
     }
   };
 
@@ -28,7 +26,12 @@ function Header(props) {
         <SearchIcon>
           <img src={searchIcon} alt="Search Icon" />
         </SearchIcon>
-        <SearchInput type="text" placeholder="Collection, item or user..." />
+        <SearchInput
+          value={props.search}
+          onChange={(e) => props.setSearch(e.target.value)}
+          type="text"
+          placeholder="Collection, item or user..."
+        />
       </SearchBar>
       <HeaderContent>
         <p>Drops</p>
