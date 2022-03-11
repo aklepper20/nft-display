@@ -10,10 +10,21 @@ function App() {
   const [selectedPunk, setSelectedPunk] = useState(0);
   const [theme, setTheme] = useState("dark");
 
+  const options = {
+    method: "GET",
+    // withCredentials: true,
+    headers: {
+      Accept: "application/json",
+
+      // "Access-Control-Allow-Origin": "*",
+    },
+  };
+
   useEffect(() => {
     const getNFTs = async () => {
       const openSeaData = await axios.get(
-        "https://testnets-api.opensea.io/assets?asset_contract_address=0x87c5339DD9fcF1307A1A942aE47C94d2026C72f3&order_direction=asc"
+        "https://testnets-api.opensea.io/assets?asset_contract_address=0x87c5339DD9fcF1307A1A942aE47C94d2026C72f3&order_direction=asc",
+        options
       );
       setPunkListData(openSeaData.data.assets.reverse());
     };
