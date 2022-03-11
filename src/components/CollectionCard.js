@@ -5,7 +5,7 @@ import weth from "../assets/weth.png";
 function CollectionCard({ id, name, traits, image }) {
   return (
     <Container>
-      <img src={image} alt="Punk Image" />
+      <img src={image} alt={name} />
       <Details>
         <Name>{name}</Name>
         <Id>#{id}</Id>

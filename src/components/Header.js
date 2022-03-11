@@ -26,12 +26,7 @@ function Header(props) {
         <SearchIcon>
           <img src={searchIcon} alt="Search Icon" />
         </SearchIcon>
-        <SearchInput
-          value={props.search}
-          onChange={(e) => props.setSearch(e.target.value)}
-          type="text"
-          placeholder="Collection, item or user..."
-        />
+        <SearchInput placeholder="Search punk name..." />
       </SearchBar>
       <HeaderContent>
         <p>Drops</p>

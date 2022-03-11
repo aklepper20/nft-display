@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import CollectionCard from "./CollectionCard";
 
 function PunkList({ punkListData, setSelectedPunk }) {
   return (
     <Container>
-      {punkListData.map((punk) => (
+      {punkListData?.map((punk) => (
         <div onClick={() => setSelectedPunk(punk.token_id)}>
           <CollectionCard
             key={punk.token_id}
