@@ -30,7 +30,7 @@ function Main({ selectedPunk, punkListData }) {
 
           <Owner>
             <OwnerImageContainer>
-              <img src={me} alt="Image of Aly" />
+              <img src={me} alt="Aly Photo" />
             </OwnerImageContainer>
 
             <OwnerDetails>

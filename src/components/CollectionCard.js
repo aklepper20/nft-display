@@ -11,7 +11,7 @@ function CollectionCard({ id, name, traits, image }) {
         <Id>#{id}</Id>
 
         <PriceContainer>
-          <img src={weth} alt="Eth Image" />
+          <img src={weth} alt="Eth Price" />
           <Price>{traits[0]?.value}</Price>
         </PriceContainer>
       </Details>
